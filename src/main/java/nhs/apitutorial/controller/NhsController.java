@@ -1,5 +1,6 @@
 package nhs.apitutorial.controller;
 
+import lombok.Data;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -35,6 +36,15 @@ public class NhsController {
             return new ResponseEntity(new Hello("Hello User!"), HttpStatus.OK);
         } else {
             return new ResponseEntity(new Hello("Invalid Bearer Token!"), HttpStatus.UNAUTHORIZED);
+        }
+    }
+    
+    @Data
+    static class Hello {
+        private String message;
+
+        public Hello(String message) {
+            this.message = message;
         }
     }
 }

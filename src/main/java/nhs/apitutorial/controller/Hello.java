@@ -1,13 +1,12 @@
 package nhs.apitutorial.controller;
 
+import lombok.Data;
+
+@Data
 public class Hello {
     private String message;
 
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
+    public Hello(String message) {
         this.message = message;
     }
 }
